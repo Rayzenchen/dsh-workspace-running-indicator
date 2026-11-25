@@ -1,0 +1,1 @@
+![Two folded workspaces on the left, the one with running work showing a spinner before its name; the same workspace expanded on the right, where the spinner sits beside the running session](preview.svg)

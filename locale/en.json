@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Folded workspace running indicator",
+    "description": "While a sidebar Workspace's Session list is folded and that Workspace still has a Session running (or a running subagent), the shipped running spinner appears on the Workspace row just before its name, right of the folder icon. Expanding the list removes it from the name row and the spinner shows beside the running Session as usual. The ring matches the native one in size, stroke, animation and colour, stays in phase with it, follows running state live, and its screen-reader wording follows the locale; no page reload is needed.",
+    "detail": "docs/DETAIL.md"
+  }
+}

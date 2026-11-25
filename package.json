@@ -1,0 +1,79 @@
+{
+  "name": "@local/dsh-workspace-running-indicator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Shows the shipped ongoing spinner on a folded sidebar Workspace row while any Session inside that Workspace is running or has a running subagent.",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "dsh",
+    "cordis",
+    "sidebar",
+    "workspace",
+    "session",
+    "running-indicator",
+    "spinner",
+    "web-ui",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rayzenchen/dsh-workspace-running-indicator.git"
+  },
+  "homepage": "https://github.com/Rayzenchen/dsh-workspace-running-indicator#readme",
+  "bugs": {
+    "url": "https://github.com/Rayzenchen/dsh-workspace-running-indicator/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "meta": {
+    "title": "折叠工作区运行指示器",
+    "description": "侧边栏里某个工作区的会话列表收起时，只要该工作区还有会话在跑，就在工作区名称左边（文件夹图标右侧）显示 DSH 自带的那个转圈圈图标；展开会话列表后图标自动消失，回到会话名下显示。"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "tools/*.mjs"
+  ],
+  "scripts": {
+    "test": "node tools/test-client.mjs",
+    "verify": "node tools/verify.mjs",
+    "check": "npm run verify && npm test"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-session-status",
+        "@deepseek-ai/dsh-api-workspace-controller"
+      ]
+    }
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  }
+}

@@ -1,0 +1,10 @@
+# Bundle patch for @local/dsh-workspace-running-indicator.
+#
+# One Host row. The feature itself lives entirely in the browser half
+# (`./client`): it reads Session status and Workspace membership from the
+# Client services and draws the indicator into the sidebar. The Host row exists
+# so the bundle has a real, enabled plugin entry whose activation owns the
+# Client module; its `apply` registers nothing.
+- insert:
+    - id: dsh-workspace-running-indicator
+      name: '@local/dsh-workspace-running-indicator'
